@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "equipamentos-ti"
+version = "0.1.0"
+description = "Ferramenta interna para controle de equipamentos de TI (celulares, CPUs, notebooks)"
+authors = ["Equipe de TI"]
+readme = "README.md"
+packages = [{ include = "app" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.115.0"
+uvicorn = { extras = ["standard"], version = "^0.30.0" }
+sqlalchemy = "^2.0.35"
+pydantic = "^2.9.0"
+streamlit = "^1.38.0"
+requests = "^2.32.0"
+reportlab = "^5.0.0"
+python-dateutil = "^2.9.0.post0"
+psycopg = {extras = ["binary"], version = "^3.3.4"}
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.6.9"
+pytest = "^8.3.3"
+httpx = "^0.27.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.ruff.lint.per-file-ignores]
+"app/main.py" = ["B008"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
