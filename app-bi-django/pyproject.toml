@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "app-bi-django"
+version = "0.1.0"
+description = "Aplicativo de Business Intelligence com Django e Google Charts"
+authors = ["APP-BI"]
+readme = "README.md"
+packages = [
+    { include = "config" },
+    { include = "apps" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.13"
+django = "^5.2"
+djangorestframework = "^3.16"
+psycopg = {version = "^3.2", extras = ["binary"]}
+python-dotenv = "^1.1"
+django-redis = "^7.0.0"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.12"
+pytest = "^8.4"
+pytest-django = "^4.11"
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+exclude = ["*/migrations/*"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[build-system]
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"

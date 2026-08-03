@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Dashboard BI{% endblock %}
+
+{% block content %}
+<div class="container">
+    <header class="header">
+        <div>
+            <h1>Dashboard BI</h1>
+            <p>Visão executiva de vendas</p>
+        </div>
+        <button type="button" onclick="carregarDashboard(true)">Atualizar</button>
+    </header>
+
+    <section class="kpis">
+        <div class="card"><span>Faturamento</span><strong id="faturamento">R$ 0,00</strong></div>
+        <div class="card"><span>Pedidos</span><strong id="pedidos">0</strong></div>
+        <div class="card"><span>Clientes</span><strong id="clientes">0</strong></div>
+    </section>
+
+    <section class="charts">
+        <div class="chart-card">
+            <h2>Faturamento mensal</h2>
+            <div id="chart_mensal"></div>
+        </div>
+        <div class="chart-card">
+            <h2>Vendas por segmento</h2>
+            <div id="chart_vendedores"></div>
+        </div>
+        <div class="chart-card">
+            <h2>Vendas por Representante</h2>
+            <div id="chart_categorias"></div>
+        </div>
+    </section>
+</div>
+
+<script src="{% static 'js/dashboard.js' %}"></script>
+{% endblock %}

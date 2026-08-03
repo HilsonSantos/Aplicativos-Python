@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}APP BI{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>
